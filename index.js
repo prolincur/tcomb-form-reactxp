@@ -4,4 +4,13 @@
  */
 
 'use strict';
-module.exports = require('./dist/web/index');
+import RX from 'reactxp'
+
+const t = RX.Platform.select({
+  ios: () => require('./index.ios'),
+  android: () => require('./index.android'),
+  web: () => require('./index.web'),
+  windows: () => require('./index.windows'),
+})();
+
+module.exports = t;

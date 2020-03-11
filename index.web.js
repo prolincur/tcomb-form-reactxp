@@ -3,6 +3,5 @@
  * All Rights Reserved.
  */
 
-import t from "./lib/main";
-
-module.exports = t;
+'use strict';
+module.exports = require('./dist/web/index');

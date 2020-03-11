@@ -14,21 +14,23 @@
   "homepage": "https://github.com/prolincur/tcomb-form-reactxp",
   "main": "index.js",
   "scripts": {
-    "build": "babel src --out-dir dist --source-maps",
-    "lint": "eslint --config .eslintrc --ext .js src",
-    "lint:fix": "npm run lint -- --fix"
+    "copymd": "cp -f src/native-common/*.md dist/native-common/ && cp -f src/web/*.md dist/web/",
+    "copylic": "cp -f src/native-common/LICENSE dist/native-common/ && cp -f src/web/LICENSE dist/web/",
+    "copy": "npm run copymd && npm run copylic",
+    "build": "rm -rf dist && babel src --out-dir dist --source-maps && npm run copy"
   },
   "files": [
     "LICENSE.md",
     "README.md",
-    "./index.js",
     "dist/",
+    "./index.js",
     "index.ios.js",
-    "index.android.js"
+    "index.android.js",
+    "index.web.js"
   ],
   "dependencies": {
-    "tcomb-form": "file:../tcomb-form/tcomb-form-0.9.22.tgz",
-    "tcomb-form-native": "file:../tcomb-form-native/tcomb-form-native-0.6.20.tgz"
+    "tcomb-form": "http://localhost:5000/tcomb-form-0.9.22.tgz",
+    "tcomb-form-native": "http://localhost:5000/tcomb-form-native-0.6.20.tgz"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.34",
