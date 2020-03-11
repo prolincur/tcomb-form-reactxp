@@ -1,7 +1,7 @@
 var React = require("react");
 var { View, Text, Switch } = require("react-native");
 
-function checkbox(locals) {
+const checkbox = React.forwardRef((locals, inputRef) => {
   if (locals.hidden) {
     return null;
   }
@@ -38,7 +38,7 @@ function checkbox(locals) {
       {label}
       <Switch
         accessibilityLabel={locals.label}
-        ref={el => (this.input = el)}
+        ref={inputRef}
         disabled={locals.disabled}
         onTintColor={locals.onTintColor}
         thumbTintColor={locals.thumbTintColor}
@@ -52,6 +52,6 @@ function checkbox(locals) {
       {error}
     </View>
   );
-}
+});
 
 module.exports = checkbox;

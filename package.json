@@ -28,6 +28,10 @@
     "index.android.js",
     "index.web.js"
   ],
+  "dependencies": {
+    "tcomb-form-templates-bootstrap": "^0.2.4",
+    "tcomb-validation": "^3.4.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.34",
     "@babel/preset-env": "^7.0.0-beta.34",
@@ -41,10 +45,10 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.5.1",
-    "reactxp": "2.0.0",
     "react": "16.13.0",
     "react-dom": "16.13.0",
-    "react-native": "0.59.10"
+    "react-native": "0.59.10",
+    "reactxp": "2.0.0"
   },
   "tags": [
     "tcomb",

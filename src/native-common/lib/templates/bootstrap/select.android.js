@@ -1,7 +1,7 @@
 var React = require("react");
 var { View, Text, Picker } = require("react-native");
 
-function select(locals) {
+const select = React.forwardRef((locals, inputRef) => {
   if (locals.hidden) {
     return null;
   }
@@ -46,7 +46,7 @@ function select(locals) {
       {label}
       <Picker
         accessibilityLabel={locals.label}
-        ref={el => (this.input = el)}
+        ref={inputRef}
         style={selectStyle}
         selectedValue={locals.value}
         onValueChange={locals.onChange}
@@ -62,6 +62,6 @@ function select(locals) {
       {error}
     </View>
   );
-}
+});
 
 module.exports = select;

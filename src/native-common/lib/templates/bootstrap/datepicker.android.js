@@ -7,7 +7,7 @@ import {
   TouchableNativeFeedback
 } from "react-native";
 
-function datepicker(locals) {
+const datepicker = React.forwardRef((locals, inputRef) => {
   if (locals.hidden) {
     return null;
   }
@@ -105,7 +105,7 @@ function datepicker(locals) {
           <TouchableNativeFeedback
             accessible={true}
             disabled={locals.disabled}
-            ref={el => (this.input = el)}
+            ref={inputRef}
             background={background}
             onPress={function() {
               let config = {
@@ -137,7 +137,7 @@ function datepicker(locals) {
           <TouchableNativeFeedback
             accessible={true}
             disabled={locals.disabled}
-            ref={el => (this.input = el)}
+            ref={inputRef}
             background={background}
             onPress={function() {
               const now = new Date();
@@ -172,7 +172,7 @@ function datepicker(locals) {
         <TouchableNativeFeedback
           accessible={true}
           disabled={locals.disabled}
-          ref={el => (this.input = el)}
+          ref={inputRef}
           background={background}
           onPress={function() {
             if (datePickerMode === "time") {
@@ -227,6 +227,6 @@ function datepicker(locals) {
       {error}
     </View>
   );
-}
+});
 
 module.exports = datepicker;

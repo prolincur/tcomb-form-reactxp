@@ -1,7 +1,7 @@
 var React = require("react");
 var { View, Text, TextInput } = require("react-native");
 
-function textbox(locals) {
+const textbox = React.forwardRef((locals, inputRef) => {
   if (locals.hidden) {
     return null;
   }
@@ -46,7 +46,7 @@ function textbox(locals) {
       <View style={textboxViewStyle}>
         <TextInput
           accessibilityLabel={locals.label}
-          ref={el => (this.input = el)}
+          ref={inputRef}
           allowFontScaling={locals.allowFontScaling}
           autoCapitalize={locals.autoCapitalize}
           autoCorrect={locals.autoCorrect}
@@ -88,6 +88,6 @@ function textbox(locals) {
       {error}
     </View>
   );
-}
+});
 
 module.exports = textbox;
