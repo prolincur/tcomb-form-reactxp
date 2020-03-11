@@ -28,10 +28,6 @@
     "index.android.js",
     "index.web.js"
   ],
-  "dependencies": {
-    "tcomb-form": "http://localhost:5000/tcomb-form-0.9.22.tgz",
-    "tcomb-form-native": "http://localhost:5000/tcomb-form-native-0.6.20.tgz"
-  },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.34",
     "@babel/preset-env": "^7.0.0-beta.34",
